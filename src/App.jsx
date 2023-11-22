@@ -1,6 +1,6 @@
 import "./App.css";
-import About from "./components/About";
-import Contacts from "./components/Contacts";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./App.css";

@@ -1,8 +1,19 @@
-# React + Vite
+- [] stopPropagation
+- [] lable background
+- [] fetch vimeo
+- [] loader in fetch promisse
+- [] :route - nested route inside Video component
+- [] overflow hidde in Video component when :video is open
+- [] menu isActive indicator
+- [] stop and reset video when close :video component
+- [] custom video player - dev soutinho
+- [] label show when mouse over in desktop mode
+- [] label show in mobile mode
+- [] reorder videos in files file
+- [] SSR vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Videos to Add
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Clipe Shakespeare
+- Linguiças
+-
