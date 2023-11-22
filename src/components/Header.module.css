@@ -1,0 +1,121 @@
+.thumbContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px;
+  line-height: 0;
+}
+
+.divVid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0c0b0cec;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.divVid video {
+  max-width: 100%;
+  padding: 0 10px;
+  cursor: default;
+}
+
+.closeBtn {
+  width: 30px;
+  cursor: pointer;
+  align-self: flex-end;
+  padding-right: 5px;
+  margin: 0 15px 25px 0;
+}
+
+.videoLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c0b0c;
+  padding: 20px;
+  cursor: default;
+}
+
+.videoLabel h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 9pt;
+}
+
+.videoLabel h5 {
+  font-size: 13pt;
+  text-transform: uppercase;
+}
+
+.videoLabel h6 {
+  font-size: 9pt;
+  font-weight: 300;
+}
+
+/* -------------------- */
+.div-img {
+  position: relative;
+  cursor: pointer;
+  max-width: 480px;
+}
+
+.thumb {
+  max-width: 100%;
+  cursor: pointer;
+}
+
+/* -------------------- */
+.description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute !important;
+  top: 0;
+  background-color: #0c0b0c;
+  opacity: 0.8;
+  line-height: 30pt;
+  cursor: pointer;
+}
+
+.description h4 h5 h6 {
+  text-align: center;
+}
+
+.description h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.description h5 {
+  font-size: 23pt;
+  text-transform: uppercase;
+}
+
+.description h6 {
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+.hide {
+  display: none;
+  transition: all 0.5s;
+}
+
+@media (max-width: 960px) {
+  .thumb {
+    max-width: 100%;
+  }
+}
