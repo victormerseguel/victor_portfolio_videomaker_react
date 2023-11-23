@@ -1,48 +1,50 @@
-import { useRef, useState } from "react";
-import { files } from "../db/files";
+import { orderedFiles } from "../db/files";
 import Video from "../components/Video";
 
 import style from "./Works.module.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 const Works = () => {
-  const [video, setVideo] = useState(false);
-  const [id, setId] = useState("");
-  const labelRef = useRef();
+  const navigate = useNavigate();
 
   const handleClick = ({ target }) => {
-    setVideo(true);
-    setId(target.id);
+    const idTarget = !target.id ? target.parentElement.id : target.id;
+    document.body.style.overflow = "hidden";
+    navigate(`/video/${idTarget.replace("Label", "")}`);
   };
 
   function showLabel({ target }) {
-    console.log(labelRef);
+    const labelDiv = document.querySelector(`#${target.id}Label`);
+    labelDiv.classList.remove(style.hide);
   }
 
-  function hideLabel() {}
+  function hideLabel({ target }) {
+    const idTarget = !target.id ? target.parentElement.id : target.id;
+    const labelDiv = document.querySelector(`#${idTarget}`);
+    if (idTarget.includes("Label")) labelDiv.classList.add(style.hide);
+  }
 
   return (
     <div>
       <div className={style.thumbContainer} id="thumbContainer">
-        {files.map((file, index) => (
+        {orderedFiles.map((file, index) => (
           <div
             key={index}
             className={style.divImg}
             style={{ position: "relative" }}
             onMouseEnter={(e) => showLabel(e)}
-            onMouseLeave={hideLabel}
+            onMouseLeave={(e) => hideLabel(e)}
           >
             <img
               src={file.imgURL}
               className={style.thumb}
               alt={file.nome}
-              onClick={(e) => handleClick(e)}
-              id={file.imgURL
-                .replace("/src/assets/thumb_", "")
-                .replace(".jpg", "")}
+              id={file.id}
             />
             <div
               className={`${style.description} ${style.hide}`}
-              ref={labelRef}
+              id={`${file.id}Label`}
+              onClick={(e) => handleClick(e)}
             >
               <h4>{file.descriptType}</h4>
               <h5>{file.descripTitle}</h5>
@@ -51,7 +53,9 @@ const Works = () => {
           </div>
         ))}
       </div>
-      {video && <Video video={video} id={id} setVideo={setVideo} />}
+      <Routes>
+        <Route path="video/:id" element={<Video />} />
+      </Routes>
     </div>
   );
 };

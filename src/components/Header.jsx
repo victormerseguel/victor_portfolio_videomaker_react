@@ -10,18 +10,24 @@ const Header = () => {
         <ul>
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? "active" : "")}
+            className={({ isActive }) => (isActive ? style.active : "")}
           >
             <li id="jobsBtn" className={`${style.menu} ${style.currentMenu}`}>
               Trabalhos
             </li>
           </NavLink>
-          <NavLink to="about">
+          <NavLink
+            to="about"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
             <li id="aboutBtn" className={style.menu}>
               Sobre
             </li>
           </NavLink>
-          <NavLink to={"/contacts"}>
+          <NavLink
+            to={"/contacts"}
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
             <li id="contactsBtn" className={style.menu}>
               Contactos
             </li>

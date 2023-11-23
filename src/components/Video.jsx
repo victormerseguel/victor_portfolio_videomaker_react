@@ -1,14 +1,26 @@
-import { files } from "../db/files";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { orderedFiles } from "../db/files";
 import closebtn from "../assets/close.png";
-import video1 from "../assets/videos/video_caterina1.mp4";
 
 import style from "./Video.module.css";
 
-const Video = ({ video, id, setVideo }) => {
+const Video = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const videoRef = useRef();
+
   const handleClickOut = (e) => {
-    e.stopPropagation();
-    setVideo(false);
+    document.body.style.overflow = "scroll";
+    navigate("/");
   };
+
+  useEffect(() => {
+    setTimeout(function () {
+      console.log(videoRef.current);
+    }, 10);
+  }, []);
 
   return (
     <div className={style.divVid} onClick={(e) => handleClickOut(e)}>
@@ -16,17 +28,30 @@ const Video = ({ video, id, setVideo }) => {
         className={style.closeBtn}
         src={closebtn}
         alt=""
-        onClick={() => setVideo(false)}
+        onClick={handleClickOut}
       />
-      <video src={video1} controls />
-      {files.map((file) =>
-        id ===
-        file.imgURL.replace("/src/assets/thumb_", "").replace(".jpg", "") ? (
-          <div className={style.videoLabel} key={file.descripTitle}>
-            <h4>{file.descriptType}</h4>
-            <h5>{file.descripTitle}</h5>
-            <h6>{file.descripClient}</h6>
-          </div>
+      {orderedFiles.map((file) =>
+        id === file.id ? (
+          <Fragment key={file.descripTitle}>
+            <iframe
+              id={`${id}Video`}
+              className={style.video}
+              width="100%"
+              height="fit-content"
+              src={`https://player.vimeo.com/video/${file.patch}?portrait=0&title=0&autoplay=1&controls=0&keyboard=1&loop=1&playsinline=0&speed=0`}
+              frameBorder="0"
+              title="0"
+              portrait="false"
+              allow="autoplay; fullscreen; picture-in-picture"
+              onPlaying={() => console.log("playing")}
+              ref={videoRef}
+            ></iframe>
+            <div className={style.videoLabel} onClick={handleClickOut}>
+              <h4>{file.descriptType}</h4>
+              <h5>{file.descripTitle}</h5>
+              <h6>{file.descripClient}</h6>
+            </div>
+          </Fragment>
         ) : null
       )}
     </div>

@@ -5,3 +5,8 @@
 .active {
   border-bottom: 1px solid #e1dedb;
 }
+@media (max-width: 960px) {
+  .header {
+    text-align: center;
+  }
+}

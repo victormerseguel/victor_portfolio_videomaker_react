@@ -7,10 +7,10 @@
 }
 
 .contactArtist {
-  font-size: 25pt;
-  font-weight: 500;
-  color: #343434;
-  padding: 10px 15px;
+  font-size: 25pt !important;
+  font-weight: 500 !important;
+  color: #343434 !important;
+  padding: 10px 15px !important;
 }
 
 .contactInfo {
@@ -81,13 +81,13 @@
   height: 100%;
 }
 
-#since h3 {
+.since h3 {
   line-height: 15pt;
   text-align: center;
 }
 
-#since {
-  height: 100%;
+.since {
+  height: 70%;
 }
 
 @media (max-width: 960px) {

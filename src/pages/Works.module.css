@@ -28,8 +28,7 @@
   align-items: center;
   position: absolute !important;
   top: 0;
-  background-color: #0c0b0c;
-  opacity: 0.8;
+  background-color: #0c0b0cbf;
   line-height: 30pt;
   cursor: pointer;
 }
@@ -55,5 +54,34 @@
 
 .hide {
   display: none;
-  transition: all 0.5s;
+}
+
+@media (max-width: 768px) {
+  .hide {
+    display: flex;
+  }
+
+  .description {
+    justify-content: flex-end;
+    line-height: 1.6rem;
+    background: linear-gradient(
+      0deg,
+      #0c0b0cbf 0%,
+      #0c0b0c8c 15%,
+      #02002400 100%
+    );
+  }
+
+  .description h4 {
+    font-size: 0.8rem;
+  }
+
+  .description h5 {
+    font-size: 1.4rem;
+  }
+
+  .description h6 {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
 }

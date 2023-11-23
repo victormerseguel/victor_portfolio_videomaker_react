@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Contacts.module.css";
 
+import chair from "../assets/chair.png";
+
 const Contacts = () => {
   return (
     <>
@@ -9,7 +11,7 @@ const Contacts = () => {
           <div className={`${styles.row} ${styles.firstRow}`}>
             <div className={styles.left}>
               <div className={styles.inside}>
-                <h2 id="contactArtist">Victor Merseguel</h2>
+                <h2 className={styles.contactArtist}>Victor Merseguel</h2>
               </div>
               <div className={styles.inside}>
                 <h3 className={styles.contactInfo}>
@@ -30,7 +32,7 @@ const Contacts = () => {
               </div>
             </div>
             <div className={styles.right}>
-              <img src="assets/chair.png" alt="" />
+              <img src={chair} alt="" />
             </div>
           </div>
           <div className={styles.row}>
@@ -48,7 +50,7 @@ const Contacts = () => {
                 <p>Produção Musical</p>
               </div>
             </div>
-            <div className={styles.right} id="since">
+            <div className={`${styles.right} ${styles.since}`} id="since">
               <h3 className={styles.contactInfo}>since 2017</h3>
             </div>
           </div>
