@@ -8,7 +8,7 @@
 - [x] stop and reset video when close :video component
 - [x] custom vimeo player
 - [x] label show when mouse over in desktop mode
-- [] label show in mobile mode
+- [x] label show in mobile mode
 - [x] reorder videos in files file
 - [] SSR vite
 
