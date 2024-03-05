@@ -63,3 +63,15 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 375px) {
+  .content h1 {
+    font-size: 30pt;
+  }
+  .content ul {
+    gap: 28px;
+  }
+  .content li {
+    font-size: 14px;
+  }
+}

@@ -16,12 +16,6 @@ const Video = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    setTimeout(function () {
-      console.log(videoRef.current);
-    }, 10);
-  }, []);
-
   return (
     <div className={style.divVid} onClick={(e) => handleClickOut(e)}>
       <img
@@ -39,11 +33,9 @@ const Video = () => {
               width="100%"
               height="fit-content"
               src={`https://player.vimeo.com/video/${file.patch}?portrait=0&title=0&autoplay=1&controls=0&keyboard=1&loop=1&playsinline=0&speed=0`}
-              frameBorder="0"
               title="0"
               portrait="false"
               allow="autoplay; fullscreen; picture-in-picture"
-              onPlaying={() => console.log("playing")}
               ref={videoRef}
             ></iframe>
             <div className={style.videoLabel} onClick={handleClickOut}>

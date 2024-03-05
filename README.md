@@ -17,3 +17,4 @@
 - Clipe Shakespeare
 - Linguiças
 - Béradêro
+- Lari Finocchiaro

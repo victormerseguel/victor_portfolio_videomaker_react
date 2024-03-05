@@ -3,7 +3,7 @@ import style from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div className={style.header}>
+    <header className={style.header}>
       <h1>Victor Merseguel</h1>
       <h2>Diretor, Colorista, Editor e Videógrafo</h2>
       <nav>
@@ -34,7 +34,7 @@ const Header = () => {
           </NavLink>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 

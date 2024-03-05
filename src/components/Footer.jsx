@@ -2,7 +2,7 @@ import style from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={style.footer}>
+    <footer className={style.footer}>
       <div>
         <h3>
           Victor Merseguel © <span id="footerYear"></span>
@@ -11,7 +11,7 @@ const Footer = () => {
       <div>
         <p>Todos os direitos reservados</p>
       </div>
-    </div>
+    </footer>
   );
 };
 
